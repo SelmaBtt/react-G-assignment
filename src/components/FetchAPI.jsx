@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import Search from "./Search";
+import DisplayResults from "./DisplayResult";
 
 const FetchAPI=()=> {
     const [food, setFood] = useState([])
@@ -25,7 +26,10 @@ const FetchAPI=()=> {
     }, [searchOccured]); // Sebbe: När jag tryckt på sök knappen, kör denna. Hur gör vi? Props kanske
 
     return(
-        <Search setSearchOccured={setSearchOccured} data={food} setSearchInputValue={setSearchInputValue} />
+        <>
+            <Search setSearchOccured={setSearchOccured} setSearchInputValue={setSearchInputValue} />
+            <DisplayResults data={food} />
+        </>
     )
 }
 

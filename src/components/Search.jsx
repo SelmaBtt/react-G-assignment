@@ -1,8 +1,6 @@
-import { useRef, useState } from "react"
-import FetchAPI from "./FetchAPI"
-import DisplayResults from "./DisplayResult"
+import { useRef } from "react"
 
-const Search=({ data, setSearchOccured, setSearchInputValue })=> {
+const Search=({ setSearchOccured, setSearchInputValue })=> {
     
     const searchInput = useRef() // "searchInput" value is set to the prop "setSearchInputValue"
     // const [recipes, setRecipes] = useState([]) // This intended function is moved to FetchAPI.jsx 
@@ -15,8 +13,6 @@ const Search=({ data, setSearchOccured, setSearchInputValue })=> {
         <>
             <input ref={searchInput} onChange={() => setSearchInputValue(searchInput.current.value)} type="text" /> {/* "onChange"=eveytime change happens in the input. "setSeachInputValue" is a useState prop from FetchAPI.jsx, is the value that affects the API */}
             <button onClick={fetchDataBtn}>Search</button>
-
-            <DisplayResults data={data} />
         </>
     )
 }
