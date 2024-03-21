@@ -3,7 +3,7 @@ import Search from "./Search";
 import DisplayResults from "./DisplayResult";
 
 const FetchAPI=()=> {
-    const [food, setFood] = useState([])
+    const [meals, setMeals] = useState([])
     const [searchOccured, setSearchOccured] = useState(false) // Becomes a prop to the Search.jsx for boolean button
     const [searchInputValue, setSearchInputValue] = useState(null) // Becomes a prop for the API search, is the input value
 
@@ -11,12 +11,12 @@ const FetchAPI=()=> {
         fetch('https://www.themealdb.com/api/json/v1/1/search.php?s=' + searchInputValue)
         .then(response => {
             if(!response.ok){
-                throw Error('The item youre searching for doesnt exist') //This error is for non existent input search item
+                throw Error('The meal youre searching for doesnt exist') //This error is for non existent input search item
             }
             return response.json();
         })
         .then(data => {
-            setFood(data.meals)
+            setMeals(data.meals)
             setSearchOccured(false) // Resets the button so it isnt always on (i.e always on true)
         })
         .catch(error => {
@@ -28,7 +28,7 @@ const FetchAPI=()=> {
     return(
         <>
             <Search setSearchOccured={setSearchOccured} setSearchInputValue={setSearchInputValue} />
-            <DisplayResults data={food} />
+            <DisplayResults data={meals} />
         </>
     )
 }
