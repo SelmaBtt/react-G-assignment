@@ -1,5 +1,6 @@
 import { useRef, useState } from "react"
 import FetchAPI from "./FetchAPI"
+import DisplayResults from "./DisplayResult"
 
 const ShowSearch=({ data, setSearchOccured, setSearchInputValue })=> {
     
@@ -15,14 +16,7 @@ const ShowSearch=({ data, setSearchOccured, setSearchInputValue })=> {
             <input ref={searchInput} onChange={() => setSearchInputValue(searchInput.current.value)} type="text" /> {/* "onChange"=eveytime change happens in the input. "setSeachInputValue" is a useState prop from FetchAPI.jsx, is the value that affects the API */}
             <button onClick={fetchDataBtn}>Search</button>
 
-            <ul>
-                {(data && data.length > 0) && data.map((item, idx) => ( // If data.length is higher than 0, map out the array 
-                    <li key={idx}>
-                        {JSON.stringify(item.strMeal)} <br />
-                        <img src={item.strMealThumb} alt="Meal image" />
-                    </li>
-                ))}  
-            </ul>
+            <DisplayResults data={data} />
         </>
     )
 }
