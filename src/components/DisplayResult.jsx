@@ -1,9 +1,14 @@
 import FetchID from "./FetchID";
+import { useState } from "react";
 
 const DisplayResults = ({ data }) => {
+    const [mealID, setMealID] = useState(null)
+    const [clickOccured, setClickOccured] = useState(false)
 
     const getID = (item) => {
-        console.log(item.idMeal)
+        setMealID(item.idMeal)
+        // console.log(mealID)
+        setClickOccured(true)
     }
 
     return(
@@ -16,7 +21,7 @@ const DisplayResults = ({ data }) => {
                     </li>
                 ))}  
             </ul>
-            {/* <FetchID individualMealID={} /> Meal id that we get from the ID function */}
+            <FetchID mealID={mealID} setClickOccured={setClickOccured} />
         </>
     )
 }
