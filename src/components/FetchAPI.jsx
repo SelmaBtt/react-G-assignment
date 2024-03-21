@@ -3,8 +3,8 @@ import ShowSearch from "./ShowSearch";
 
 const FetchAPI=()=> {
     const [food, setFood] = useState([])
-    const [searchOccured, setSearchOccured] = useState(false)
-    const [searchInputValue, setSearchInputValue] = useState(null)
+    const [searchOccured, setSearchOccured] = useState(false) // Becomes a prop to the ShowSearch.jsx for boolean button
+    const [searchInputValue, setSearchInputValue] = useState(null) // Becomes a prop for the API search, is the input value
 
     useEffect(()=> {
         fetch('https://www.themealdb.com/api/json/v1/1/search.php?s=' + searchInputValue)
@@ -15,15 +15,14 @@ const FetchAPI=()=> {
             return response.json();
         })
         .then(data => {
-            // console.log(data)
             setFood(data.meals)
-            setSearchOccured(false)
+            setSearchOccured(false) // Resets the button so it isnt always on (i.e always on true)
         })
         .catch(error => {
             console.log(error.message); //Supposed to show error message with error.message
         })
 
-    }, [searchOccured]); // När jag tryckt på sök knappen, kör denna. Hur gör vi? Props kanske
+    }, [searchOccured]); // Sebbe: När jag tryckt på sök knappen, kör denna. Hur gör vi? Props kanske
 
     return(
         <ShowSearch setSearchOccured={setSearchOccured} data={food} setSearchInputValue={setSearchInputValue} />

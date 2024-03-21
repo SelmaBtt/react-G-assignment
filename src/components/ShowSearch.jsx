@@ -3,23 +3,23 @@ import FetchAPI from "./FetchAPI"
 
 const ShowSearch=({ data, setSearchOccured, setSearchInputValue })=> {
     
-    const searchInput = useRef()
-    // const [recipes, setRecipes] = useState([])
+    const searchInput = useRef() // "searchInput" value is set to the prop "setSearchInputValue"
+    // const [recipes, setRecipes] = useState([]) // This intended function is moved to FetchAPI.jsx 
 
-    const fetchData = () => {
-        setSearchOccured(true)
+    const fetchDataBtn = () => {
+        setSearchOccured(true) //FetchAPI.jsx has the button content. When button is pressed -> useEffect dependency array has the "searchOccured" as a dependency 
     }
 
     return(
         <>
-            <input ref={searchInput} onChange={() => setSearchInputValue(searchInput.current.value)} type="text" />
-            <button onClick={fetchData}>Search</button>
+            <input ref={searchInput} onChange={() => setSearchInputValue(searchInput.current.value)} type="text" /> {/* "onChange"=eveytime change happens in the input. "setSeachInputValue" is a useState prop from FetchAPI.jsx, is the value that affects the API */}
+            <button onClick={fetchDataBtn}>Search</button>
 
             <ul>
-                {(data && data.length > 0) && data.map((item, idx) => (
+                {(data && data.length > 0) && data.map((item, idx) => ( // If data.length is higher than 0, map out the array 
                     <li key={idx}>
-                        {JSON.stringify(item)}
-                        {/* Börja hämta ut bilder samt namnet utifrån item */}
+                        {JSON.stringify(item.strMeal)} <br />
+                        <img src={item.strMealThumb} alt="Meal image" />
                     </li>
                 ))}  
             </ul>
@@ -27,4 +27,4 @@ const ShowSearch=({ data, setSearchOccured, setSearchInputValue })=> {
     )
 }
 
-export default ShowSearch
+export default ShowSearch;
