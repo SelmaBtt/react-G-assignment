@@ -1,6 +1,6 @@
 
 
-const ShowSearch=()=> {
+const ShowDetails=()=> {
     return(
         <>
         
@@ -8,4 +8,4 @@ const ShowSearch=()=> {
     )
 }
 
-export default ShowSearch
+export default ShowDetails

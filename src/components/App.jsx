@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import '../stylesheets/App.css'
-import ShowSearch from './ShowSearch'
 import FetchAPI from './FetchAPI'
 
 function App() {

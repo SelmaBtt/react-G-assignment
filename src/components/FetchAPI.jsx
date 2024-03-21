@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react"
-import ShowSearch from "./ShowSearch";
+import Search from "./Search";
 
 const FetchAPI=()=> {
     const [food, setFood] = useState([])
-    const [searchOccured, setSearchOccured] = useState(false) // Becomes a prop to the ShowSearch.jsx for boolean button
+    const [searchOccured, setSearchOccured] = useState(false) // Becomes a prop to the Search.jsx for boolean button
     const [searchInputValue, setSearchInputValue] = useState(null) // Becomes a prop for the API search, is the input value
 
     useEffect(()=> {
@@ -25,7 +25,7 @@ const FetchAPI=()=> {
     }, [searchOccured]); // Sebbe: När jag tryckt på sök knappen, kör denna. Hur gör vi? Props kanske
 
     return(
-        <ShowSearch setSearchOccured={setSearchOccured} data={food} setSearchInputValue={setSearchInputValue} />
+        <Search setSearchOccured={setSearchOccured} data={food} setSearchInputValue={setSearchInputValue} />
     )
 }
 

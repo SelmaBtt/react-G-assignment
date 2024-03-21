@@ -2,7 +2,7 @@ import { useRef, useState } from "react"
 import FetchAPI from "./FetchAPI"
 import DisplayResults from "./DisplayResult"
 
-const ShowSearch=({ data, setSearchOccured, setSearchInputValue })=> {
+const Search=({ data, setSearchOccured, setSearchInputValue })=> {
     
     const searchInput = useRef() // "searchInput" value is set to the prop "setSearchInputValue"
     // const [recipes, setRecipes] = useState([]) // This intended function is moved to FetchAPI.jsx 
@@ -21,4 +21,4 @@ const ShowSearch=({ data, setSearchOccured, setSearchInputValue })=> {
     )
 }
 
-export default ShowSearch;
+export default Search;
