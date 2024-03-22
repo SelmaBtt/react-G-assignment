@@ -3,20 +3,20 @@ import DisplayMealDetail from "./DisplayMealDetail";
 import { OnClickContext } from "../context/OnClickContextProvider";
 
 const FetchID = ({ meal }) => { // We need the meal prop from DisplayResult.jsx
-    const { onClickUpdateFunc, booleanVal } = useContext(OnClickContext)
+    const { onClickUpdateFunc } = useContext(OnClickContext)
     const [mealDetails, setMealDetails] = useState([])
 
     useEffect(()=> {
         fetch('https://www.themealdb.com/api/json/v1/1/search.php?s=' + meal)
         .then(response => {
-            console.log(response)
+            // console.log(response)
             if(!response.ok){
                 throw Error('Item is unverifiable')
             }
             return response.json();
         })
         .then(data => {
-            console.log(data)
+            // console.log(data)
             setMealDetails(data.meals)
             onClickUpdateFunc(false)
         })

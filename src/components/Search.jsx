@@ -1,12 +1,14 @@
-import { useRef } from "react"
+import { useRef, useContext } from "react"
+import { OnClickContext } from "../context/OnClickContextProvider";
 
-const Search=({ setSearchOccured, setSearchInputValue })=> {
+const Search=({ setSearchInputValue })=> {
+    const { onClickUpdateFunc } = useContext(OnClickContext)
     
     const searchInput = useRef() // "searchInput" value is set to the prop "setSearchInputValue"
     // const [recipes, setRecipes] = useState([]) // This intended function is moved to FetchAPI.jsx 
 
     const fetchDataBtn = () => {
-        setSearchOccured(true) //FetchAPI.jsx has the button content. When button is pressed -> useEffect dependency array has the "searchOccured" as a dependency 
+        onClickUpdateFunc(true)
     }
 
     return(

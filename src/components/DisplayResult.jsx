@@ -4,14 +4,11 @@ import { OnClickContext } from "../context/OnClickContextProvider";
 
 const DisplayResults = ({ data }) => {
     const { onClickUpdateFunc } = useContext(OnClickContext)
-
     const [meal, setMeal] = useState(null)
-    // const [clickOccured, setClickOccured] = useState(false)
 
     const getName = (item) => {
         setMeal(item.strMeal)
         // console.log(meal)
-        // setClickOccured(true)
         onClickUpdateFunc(true)
     }
 
@@ -26,7 +23,6 @@ const DisplayResults = ({ data }) => {
                 ))}  
             </ul>
             <FetchID meal={meal} />
-            {/* setClickOccured={setClickOccured} */}
         </>
     )
 }
