@@ -1,0 +1,19 @@
+.ulWrapper{
+    background-color: rgb(230, 230, 230);
+    border: 9px ridge lightgrey;
+    padding: 30px 50px 50px 50px;
+    list-style: none;
+    background-color: rgb(45, 156, 151);
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin-bottom: 0;
+}
+
+.detailTitle{
+    text-decoration: underline;
+}
+
+.liH2Titles h2{
+    margin-bottom: 0.3em;
+}

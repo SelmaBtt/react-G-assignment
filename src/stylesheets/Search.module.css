@@ -3,6 +3,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    border-top: 9px ridge lightgrey;
+    border-right: 9px ridge lightgrey;
+    border-left: 9px ridge lightgrey;
 }
 .chopstickGif{
     margin-top: -20px;
@@ -19,6 +22,9 @@
     justify-content: center;
     padding: 20px 0 50px 0;
     background-color: rgb(45, 156, 151);
+    border-right: 9px ridge lightgrey;
+    border-bottom: 9px ridge lightgrey;
+    border-left: 9px ridge lightgrey;
 }
 
 .searchInput, .searchBtn {
