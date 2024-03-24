@@ -13,8 +13,7 @@ const DisplayMealDetail = ({ mealDetails }) => {
                     {item.strArea} <br />
                     {item.strInstructions} <br />
                     {item.strTags && item.strTags} <br />
-                    <ConvertObjToArr mealObj={item}/>
-                    {/* <img src={item.strMealThumb} alt="Meal image" /> */}
+                    <ConvertObjToArr mealObj={item} />
                 </li>
             ))}  
         </ul>

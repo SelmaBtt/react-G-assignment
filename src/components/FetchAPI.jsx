@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react"
 import { OnClickContext } from "../context/OnClickContextProvider";
 import Search from "./Search";
 import DisplayResults from "./DisplayResult";
+import styled from '../stylesheets/FetchApi.module.css'
 
 const FetchAPI=()=> {
     const { onClickUpdateFunc } = useContext(OnClickContext)
