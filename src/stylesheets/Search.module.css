@@ -1,42 +1,64 @@
+.chopstickGifWrapper{
+    background-color: rgb(45, 156, 151);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.chopstickGif{
+    margin-top: -20px;
+}
+.chopstickTitle{
+    margin-top: 50px;
+    font-variant: small-caps;
+    text-decoration: underline;
+}
+
 .divWrapper{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    padding: 50px 0;
-    background-color: aqua;
+    padding: 20px 0 50px 0;
+    background-color: rgb(45, 156, 151);
 }
 
 .searchInput, .searchBtn {
-    border-radius: 30px;
+    border-radius: 5px;
     padding: 5px;
     border: 0px;
+    background-color: rgb(230, 230, 230);
 }
 
 .searchInput {
     width: 50%;
     /* height: 41px; */
-    font-size: 2em;
+    font-size: 1.5em;
     padding-left: 2%;
     outline: none;
+    border: 6px ridge lightgrey;
+}
+
+.searchInput:active {
+    box-shadow: inset 2px 2px #858585;
+    transform: translateY(3px);
 }
 
 .searchBtn {
-    background-color: transparent;
+    /* background-color: transparent; */
     margin-left: 1%;
+    /* padding: 4px; */
+    border: 6px ridge lightgrey;
 }
 
 .searchBtn:hover{
-    transition: all 0.2s ease-out;
-    opacity: 0.4;
+    /* padding: 0px; */
+    cursor: pointer;
+}
+
+.searchBtn:active {
+    box-shadow: inset 1px 1px #858585;
+    transform: translateY(3px);
 }
 
 .reactSvg{
     fill: black;
 }
-
-
-/* doesnt work: */
-/* .reactSvg:hover{
-    box-shadow: 2px 2px red;
-
-} */

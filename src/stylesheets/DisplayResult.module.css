@@ -1,0 +1,33 @@
+.ulWrapper{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    justify-content: center;
+    margin: 50px 10vw;
+}
+
+.liElement{
+    margin: 30px;
+    text-align: center;
+    border-radius: 5px;
+    /* padding: 4px; */
+    border: 9px ridge lightgrey;
+    inline-size: min-content;
+    background-color: rgb(230, 230, 230);
+}
+
+.liElement:hover{
+    cursor: pointer;
+}
+
+.liElement:active {
+    box-shadow: -1.5px -1.5px lightgray;
+    transform: translate(1px, 3px);
+}
+
+.imgElement{
+    width: 15vw;
+    outline: 9px ridge lightgrey;
+    border-radius: 2px 2px 0 0;
+}
