@@ -1,3 +1,10 @@
+.buttonVisability{
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 1;
+}
+
 .ulWrapper{
     background-color: rgb(230, 230, 230);
     border: 9px ridge lightgrey;
