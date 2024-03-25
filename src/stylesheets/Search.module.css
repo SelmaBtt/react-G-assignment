@@ -1,11 +1,13 @@
+@import url(variables.css);
+
 .chopstickGifWrapper{
-    background-color: rgb(45, 156, 151);
+    background-color: var(--background);
     display: flex;
     justify-content: center;
     align-items: center;
-    border-top: 9px ridge lightgrey;
-    border-right: 9px ridge lightgrey;
-    border-left: 9px ridge lightgrey;
+    border-top: 9px ridge var(--border-color);
+    border-right: 9px ridge var(--border-color);
+    border-left: 9px ridge var(--border-color);
 }
 .chopstickGif{
     margin-top: -20px;
@@ -21,17 +23,17 @@
     flex-direction: row;
     justify-content: center;
     padding: 20px 0 50px 0;
-    background-color: rgb(45, 156, 151);
-    border-right: 9px ridge lightgrey;
-    border-bottom: 9px ridge lightgrey;
-    border-left: 9px ridge lightgrey;
+    background-color: var(--background);
+    border-right: 9px ridge var(--border-color);
+    border-bottom: 9px ridge var(--border-color);
+    border-left: 9px ridge var(--border-color);
 }
 
 .searchInput, .searchBtn {
     border-radius: 5px;
     padding: 5px;
     border: 0px;
-    background-color: rgb(230, 230, 230);
+    background-color: var(--comp-background);
 }
 
 .searchInput {
@@ -40,11 +42,11 @@
     font-size: 1.5em;
     padding-left: 2%;
     outline: none;
-    border: 6px ridge lightgrey;
+    border: 6px ridge var(--border-color);
 }
 
 .searchInput:active {
-    box-shadow: inset 2px 2px #858585;
+    box-shadow: inset 2px 2px var(--shadow-color);
     transform: translateY(3px);
 }
 
@@ -52,7 +54,7 @@
     /* background-color: transparent; */
     margin-left: 1%;
     /* padding: 4px; */
-    border: 6px ridge lightgrey;
+    border: 6px ridge var(--border-color);
 }
 
 .searchBtn:hover{
@@ -61,7 +63,7 @@
 }
 
 .searchBtn:active {
-    box-shadow: inset 1px 1px #858585;
+    box-shadow: inset 1px 1px var(--shadow-color);
     transform: translateY(3px);
 }
 

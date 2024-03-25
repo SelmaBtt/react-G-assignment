@@ -1,3 +1,5 @@
+@import url(variables.css);
+
 .ulWrapper{
     list-style: none;
     display: flex;
@@ -12,9 +14,9 @@
     text-align: center;
     border-radius: 5px;
     /* padding: 4px; */
-    border: 9px ridge lightgrey;
+    border: 9px ridge var(--border-color);
     inline-size: min-content;
-    background-color: rgb(230, 230, 230);
+    background-color: var(--comp-background);
 }
 
 .liElement:hover{
@@ -22,12 +24,12 @@
 }
 
 .liElement:active {
-    box-shadow: -1.5px -1.5px lightgray;
-    transform: translate(1px, 3px);
+    box-shadow: -1.5px -1.5px var(--border-color);
+    transform: translateY(3px);
 }
 
 .imgElement{
     width: 15vw;
-    outline: 9px ridge lightgrey;
+    outline: 9px ridge var(--border-color);
     border-radius: 2px 2px 0 0;
 }

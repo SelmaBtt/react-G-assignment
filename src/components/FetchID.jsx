@@ -1,4 +1,4 @@
-import { useContext, useState, useEffect } from "react";
+import { useContext, useState, useEffect, useCallback } from "react";
 import DisplayMealDetail from "./DisplayMealDetail";
 import { OnClickContext } from "../context/OnClickContextProvider";
 
@@ -26,9 +26,20 @@ const FetchID = ({ meal }) => { // We need the meal prop from DisplayResult.jsx
 
     }, [onClickUpdateFunc]); // Ska köras när man klickar på den individuella li:n eller fått ID:et
 
+
+    // BUTTON TOGGLES VISABILITY AND IS CONNECTED TO THIS. 
+    // I ONLY WANT THIS FUNCTION TO BE IN MOTION WHEN YOU CLICK ON A LIST AND THE BUTTON IS GENERATED BECAUSE OTHERWISE BTN SHOULDNT EXIST
+    const useToggle = () => {
+        const [state, setState] = useState(false)
+        const toggle = useCallback(() => setState((state) => !state), [])
+        return [state, toggle]; 
+    }
+    const [toggle, setToggle] = useToggle()
+    console.log(toggle)
+
     return(
         <>
-            <DisplayMealDetail mealDetails={mealDetails}/>
+            <DisplayMealDetail mealDetails={mealDetails} toggle={toggle} setToggle={setToggle} />
         </>
     )
 }

@@ -1,0 +1,8 @@
+@import url(variables.css);
+
+*{
+    font-family: var(--main-font);
+}
+h1, h2{
+    font-weight: 300;
+}

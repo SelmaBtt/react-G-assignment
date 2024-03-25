@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+:root{
+    --comp-background: rgb(189, 189, 189);
+    --background: rgb(45, 156, 151);
+    --border-color: rgb(186, 186, 186);
+    --shadow-color: #6b6b6b;
+    --main-font: "VT323", monospace;
+}

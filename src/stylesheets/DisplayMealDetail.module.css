@@ -1,3 +1,5 @@
+@import url(variables.css);
+
 .buttonVisability{
     top: 0;
     left: 0;
@@ -6,21 +8,25 @@
 }
 
 .ulWrapper{
-    background-color: rgb(230, 230, 230);
-    border: 9px ridge lightgrey;
-    padding: 30px 50px 50px 50px;
+    background-color: var(--background);
+    border: 9px ridge var(--border-color);
+    padding: 0 50px 50px 50px;
     list-style: none;
-    background-color: rgb(45, 156, 151);
     position: fixed;
     bottom: 0;
     right: 0;
     margin-bottom: 0;
+    overflow: auto;
+    max-height: 100%;
+    box-sizing: border-box;
 }
 
 .detailTitle{
     text-decoration: underline;
+    padding-top: 30px;
+    
 }
 
-.liH2Titles h2{
+.liContainer h2{
     margin-bottom: 0.3em;
 }

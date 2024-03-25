@@ -3,19 +3,12 @@
 
 import ConvertObjToArr from "./ConvertObjToArr";
 import styled from '../stylesheets/DisplayMealDetail.module.css'
-import React, { useState, useCallback } from 'react';
 
-const DisplayMealDetail = ({ mealDetails }) => {
-    const useToggle = (initalState = true) => {
-        const [state, setState] = useState(initalState)
-        const toggle = useCallback(() => setState((state) => !state), [])
-        return [state, toggle]; 
-    }
-    const [toggle, setToggle] = useToggle()
+const DisplayMealDetail = ({ mealDetails, toggle, setToggle }) => {
 
     return(
         <>
-            <button className={styled.buttonVisability} onClick={() => setToggle(toggle)}>❌</button>
+            <button className={styled.buttonVisability} onClick={() => setToggle(!toggle)}>❌</button>
             
             {toggle && (
                 <ul className={styled.ulWrapper}>
