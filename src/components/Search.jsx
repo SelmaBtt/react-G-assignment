@@ -4,14 +4,7 @@ import gif from '../../assets/chopstick.gif'
 import styled from '../stylesheets/Search.module.css'
 
 const Search=({ setSearchInputValue })=> {
-    const { onClickUpdateFunc } = useContext(OnClickContext)
-    
     const searchInput = useRef() // "searchInput" value is set to the prop "setSearchInputValue"
-    // const [recipes, setRecipes] = useState([]) // This intended function is moved to FetchAPI.jsx 
-
-    const fetchDataBtn = () => {
-        onClickUpdateFunc(true)
-    }
 
     return(
         <>  
@@ -20,8 +13,8 @@ const Search=({ setSearchInputValue })=> {
                 <h1 className={styled.chopstickTitle}>Delicious recepies</h1>
             </div>
             <div className={styled.divWrapper}>
-                <input className={styled.searchInput} ref={searchInput} onChange={() => setSearchInputValue(searchInput.current.value)} type="text" placeholder="Search" /> {/* "onChange"=eveytime change happens in the input. "setSeachInputValue" is a useState prop from FetchAPI.jsx, is the value that affects the API */}
-                <button className={styled.searchBtn} onClick={fetchDataBtn}>
+                <input className={styled.searchInput} ref={searchInput} type="text" placeholder="Search" /> {/* "onChange"=eveytime change happens in the input. "setSeachInputValue" is a useState prop from FetchAPI.jsx, is the value that affects the API */}
+                <button className={styled.searchBtn} onClick={() => setSearchInputValue(searchInput.current.value)}>
                     {/* Button piktogram start */}
                     <svg xmlns="http://www.w3.org/2000/svg" style={{width:"41", height: "40", viewBox: "0 0 41 40", fill:"none"}}>
                         <mask id="mask0_13_7" maskUnits="userSpaceOnUse" x="0" y="0" style={{maskType:"alpha", width:"41", height:"41"}}>

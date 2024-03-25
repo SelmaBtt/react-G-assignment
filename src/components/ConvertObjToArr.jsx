@@ -4,8 +4,6 @@ const ConvertObjToArr = ({ mealObj }) => {
     .map((key, index) => `${mealObj[`strMeasure${index + 1}`]} ${mealObj[key]}`)
     .filter(combined => combined.trim() !== ''); // Om strängen inte är tom (efter att vi har trimmat bort whitespaces) så ska den ingå i resultatet
 
-    // console.log("ingredientsAndMeasures " + ingredientsAndMeasures)
-
     return(
         <>
             {(ingredientsAndMeasures && ingredientsAndMeasures.length > 0) && ingredientsAndMeasures.map((item, idx) => ( // If data.length is higher than 0, map out the array 

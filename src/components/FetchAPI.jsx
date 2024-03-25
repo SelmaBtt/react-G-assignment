@@ -1,11 +1,8 @@
-import { useContext, useEffect, useState } from "react"
-import { OnClickContext } from "../context/OnClickContextProvider";
+import { useEffect, useState } from "react"
 import Search from "./Search";
 import DisplayResults from "./DisplayResult";
-import styled from '../stylesheets/FetchApi.module.css'
 
 const FetchAPI=()=> {
-    const { onClickUpdateFunc } = useContext(OnClickContext)
     const [meals, setMeals] = useState([])
     const [searchInputValue, setSearchInputValue] = useState(null) // Becomes a prop for the API search, is the input value
 
@@ -19,14 +16,12 @@ const FetchAPI=()=> {
         })
         .then(data => {
             setMeals(data.meals)
-            // setSearchOccured(false) // Resets the button so it isnt always on (i.e always on true)
-            onClickUpdateFunc(false)
         })
         .catch(error => {
             console.log(error.message); //Supposed to show error message with error.message
         })
 
-    }, [onClickUpdateFunc]); // Sebbe: När jag tryckt på sök knappen, kör denna. Hur gör vi? Props kanske
+    }, [searchInputValue]); 
 
     return(
         <>

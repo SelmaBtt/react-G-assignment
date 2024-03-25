@@ -1,17 +1,29 @@
 @import url(variables.css);
 
-.buttonVisability{
-    top: 0;
-    left: 0;
-    position: fixed;
-    z-index: 1;
+.btnDiv{
+    display: flex;
+    justify-content: flex-end;
 }
 
-.ulWrapper{
+.buttonVisability{
+    background-color: var(--comp-background);
+    border: 6px ridge var(--border-color);
+    height: 42.3px;
+}
+
+.buttonVisability:hover{
+    cursor: pointer;
+}
+
+.buttonVisability:active {
+    box-shadow: inset 1px 1px var(--shadow-color);
+    transform: translateY(3px);
+}
+
+
+.divWrapper{
     background-color: var(--background);
     border: 9px ridge var(--border-color);
-    padding: 0 50px 50px 50px;
-    list-style: none;
     position: fixed;
     bottom: 0;
     right: 0;
@@ -19,6 +31,12 @@
     overflow: auto;
     max-height: 100%;
     box-sizing: border-box;
+}
+
+.ulElement{
+    padding: 0 50px 50px 50px;
+    list-style: none;
+    margin-top: -20px;
 }
 
 .detailTitle{

@@ -4,12 +4,11 @@ import { OnClickContext } from "../context/OnClickContextProvider";
 import styles from '../stylesheets/DisplayResult.module.css'
 
 const DisplayResults = ({ data }) => {
-    const { onClickUpdateFunc } = useContext(OnClickContext)
+    const { booleanVal, onClickUpdateFunc } = useContext(OnClickContext)
     const [meal, setMeal] = useState(null)
 
     const getName = (item) => {
         setMeal(item.strMeal)
-        // console.log(meal)
         onClickUpdateFunc(true)
     }
 
@@ -23,7 +22,7 @@ const DisplayResults = ({ data }) => {
                     </li>
                 ))}  
             </ul>
-            <FetchID meal={meal} />
+            { booleanVal && <FetchID meal={meal} /> }
         </>
     )
 }
