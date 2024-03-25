@@ -52,7 +52,7 @@
 
 .searchBtn {
     /* background-color: transparent; */
-    margin-left: 1%;
+    margin: 0 1%;
     /* padding: 4px; */
     border: 6px ridge var(--border-color);
 }

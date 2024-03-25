@@ -2,6 +2,7 @@ import { useRef, useContext } from "react"
 import { OnClickContext } from "../context/OnClickContextProvider";
 import gif from '../../assets/chopstick.gif'
 import styled from '../stylesheets/Search.module.css'
+import SoundBtn from "./SoundBtn";
 
 const Search=({ setSearchInputValue })=> {
     const searchInput = useRef() // "searchInput" value is set to the prop "setSearchInputValue"
@@ -26,6 +27,7 @@ const Search=({ setSearchInputValue })=> {
                     </svg>
                     {/* Button piktogram end */}
                 </button>
+                <SoundBtn />
             </div>
         </>
     )

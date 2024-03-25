@@ -1,0 +1,21 @@
+@import url(variables.css);
+
+.soundBtn {
+    /* margin-left: 1%; */
+    border: 6px ridge var(--border-color);
+    height: 100%;
+    padding: 5px;
+    width: 64.5px;
+    background-color: var(--comp-background);
+    border-radius: 3px;
+}
+
+.soundBtn:hover{
+    /* padding: 0px; */
+    cursor: pointer;
+}
+
+.soundBtn:active {
+    box-shadow: inset 1px 1px var(--shadow-color);
+    transform: translateY(3px);
+}
