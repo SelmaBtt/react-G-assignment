@@ -26,7 +26,8 @@ const FetchAPI=()=> {
     return(
         <>
             <Search setSearchInputValue={setSearchInputValue} />
-            <DisplayResults data={meals} />
+            {(searchInputValue && searchInputValue.length> 0) && <DisplayResults data={meals} />}
+            
         </>
     )
 }
